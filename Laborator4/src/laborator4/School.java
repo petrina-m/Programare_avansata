@@ -14,9 +14,26 @@ import static java.util.Objects.isNull;
  */
 public class School implements Comparable<School>{
     private String SchoolName;
+    int capacitate;
+    int capacitateOcupata;
 
+    public int getCapacitate() {
+        return capacitate;
+    }
+
+    public void setCapacitate(int capacitate) {
+        this.capacitate = capacitate;
+    }
+    
+    public School(String SchoolName, int capacitate) {
+        this.SchoolName = SchoolName;
+        this.capacitate = capacitate;
+        capacitateOcupata=0;
+    }
+    
     public School(String SchoolName) {
         this.SchoolName = SchoolName;
+        capacitateOcupata=0;
     }
 
     public String getSchoolName() {

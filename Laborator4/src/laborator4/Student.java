@@ -15,6 +15,21 @@ import static java.util.Objects.isNull;
 public class Student implements Comparable<Student> {
 
     private String name;
+    int notaExamen;
+
+    public Student(String name, int notaExamen) {
+        this.name = name;
+        this.notaExamen = notaExamen;
+
+    }
+
+    public int getNotaExamen() {
+        return notaExamen;
+    }
+
+    public void setNotaExamen(int notaExamen) {
+        this.notaExamen = notaExamen;
+    }
 
     public Student(String name) {
         this.name = name;
@@ -55,14 +70,18 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student other) {
-        if (isNull(other.name)) //dacanumele este null
+       //compar notele
+       //le voi ordona descrescator
+       return other.getNotaExamen()-this.notaExamen;
+        
+       /* if (isNull(other.name)) //dacanumele este null
         {
             System.out.println("There is no name");
         } else {
             return this.name.compareTo(other.name);
         }
         return 0;
-
+        */
     }
 }
 
